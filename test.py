@@ -7,7 +7,7 @@ def chk(s):
 du = DUapi("")
 
 print("Check for a real ID")
-chk(du.checkStatus("80351110224678912"))
+chk(du.checkStatus("466262009256869889"))
 
 print("\nCheck for a fake id")
 try:
