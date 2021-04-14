@@ -22,7 +22,7 @@ class DUapi:
     
     def report(self, id, reason):
         """Reports a user or raise a exception if you can't do this action."""
-        r = requests.get(self.url + "/check.json.php", params={"id": id, "key": self.token, "details": reason})
+        r = requests.get(self.url + "/report.json.php", params={"id": id, "key": self.token, "details": reason})
         if r.status_code == 200:
             return r.status_code
         else:
