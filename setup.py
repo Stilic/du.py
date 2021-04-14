@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="du.py",
-    version="1.0.0",
+    version="2.0.0",
     author="Stylix58",
     author_email="lateman-jpeg@outlook.fr",
     description="A API wrapper for Dangerous Users Data Base",
