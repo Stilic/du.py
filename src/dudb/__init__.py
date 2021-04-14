@@ -31,7 +31,8 @@ class DUapi:
     def getStats(self):
         """Returns basic statistics from the website."""
         r = requests.get(self.url + "/stats.json.php")
-        return parseJson(r.json)
+        j = parseJson(r.json)
+        return j
 
     def deleteAllReports(self):
         """Deletes all reports from the account who the API token was generated 
