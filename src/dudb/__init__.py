@@ -1,6 +1,4 @@
 import requests
-import json
-from types import SimpleNamespace
 
 def parseJson(data):
     return json.loads(data, object_hook=lambda d: SimpleNamespace(**d))
@@ -26,20 +24,21 @@ class DUapi:
         if r.status_code == 200:
             return r.status_code
         else:
-            raise RequestError("You can't report this user")
+            raise RequestError("You can't report this user (try wait 10 minutes before retry)")
 
     def getStats(self):
-        """Returns basic statistics from the website."""
-        r = requests.get(self.url + "/stats.json.php")
-        j = parseJson(r.json)
-        return j
+        """Returns basic statistics from the website (as JSON format)."""
+        return requests.get(self.url + "/stats.json.php").json()
 
     def deleteAllReports(self):
         """Deletes all reports from the account who the API token was generated 
         or raise a exception if you can't do this action."""
         r = requests.get(self.url + "/delete.json.php", {"key": self.token})
+        if r.status_code == 200:
+            return r.status_code
+        else:
+            raise RequestError("You can't delete all reports")
 
     def getWhitelist(self):
-        """Returns the user whitelist of the website."""
-        r = requests.get(self.url + "/whitelist.json")
-        return parseJson(r.json)
+        """Returns the user whitelist of the website (as JSON format)."""
+        return requests.get(self.url + "/whitelist.json").json()

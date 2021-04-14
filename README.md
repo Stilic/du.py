@@ -27,7 +27,13 @@ print(du.getStatus("466262009256869889"))
 du.report("466262009256869889", "He spam my server")
 
 # Get basic stats from the current instance
-print()
+print(du.getStats())
+
+# Delete all reports from the account who the API token was generated
+du.deleteAllReports()
+
+# Get the user whitelist of the current instance
+print(du.getWhitelist())
 ```
 
 ## License
