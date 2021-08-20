@@ -41,4 +41,4 @@ class DUapi:
 
     def getWhitelist(self):
         """Returns the user whitelist of the website (as JSON format)."""
-        return requests.get(self.url + "/whitelist.json").json()
+        return requests.get(self.url + "/whitelist.json.php").json()
