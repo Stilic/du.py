@@ -15,7 +15,7 @@ pip install du.py
 ```python
 from dudb import DUapi
 
-# Note : by default, he will look for discord.riverside.rocks website.
+# Note: by default, it will look for discord.riverside.rocks website.
 # If you want to change the instance, add the argument "url":
 # du = DUapi(url = "https://discord.example.com")
 du = DUapi(token="Your token")
@@ -24,7 +24,7 @@ du = DUapi(token="Your token")
 print(du.getStatus("466262009256869889"))
 
 # Report a user
-du.report("466262009256869889", "He spam my server")
+du.report("466262009256869889", "He spammed my server")
 
 # Get basic stats from the current instance
 print(du.getStats())
