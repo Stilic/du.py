@@ -5,10 +5,10 @@
 Just put in a terminal this simple command:
 ```sh
 # For Linux
-sudo pip3 install du.py
+sudo pip3 install discord-du
 
 # For others systems (Windows, MacOS...)
-pip install du.py
+pip install discord-du
 ```
 
 ## Basic usage
